@@ -181,9 +181,6 @@ func (s Swimming) meanSpeed() float64 {
 func (s Swimming) Calories() float64 {
 	// вставьте ваш код ниже
 	// длина_бассейна_в_метрах * CountPool / MInKm / время_тренировки_в_часах
-	if s.Duration == 0 {
-		return 0
-	}
 	return (s.meanSpeed() + SwimmingCaloriesMeanSpeedShift) * SwimmingCaloriesWeightMultiplier * s.Weight * s.Duration.Hours()
 }
 
